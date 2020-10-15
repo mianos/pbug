@@ -39,7 +39,7 @@ if __name__ == '__main__':
 
     opts = parser.parse_args()
 
-    executor = LocalDaskExecutor() # num_workers=opts.workers)
+    executor = LocalDaskExecutor(num_workers=opts.workers, scheduler="processes") # num_workers=opts.workers)
     #executor = CFExecutor()
     state = flow.run(executor=executor,
                      scripts="hello",
