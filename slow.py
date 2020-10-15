@@ -2,12 +2,14 @@ from time import sleep
 import argparse
 
 from prefect import Flow, Parameter, unmapped, task, context
+import prefect
 from prefect.engine.executors import LocalDaskExecutor
 
+from cfexecutor import CFExecutor
 
 @task(timeout=30)
 def slow_task(opts, item, scripts):
-    logger = context.get('logger')
+    logger = prefect.context.get('logger')
     logger.info(f"==== IN TASK {item} Sleeping {opts.sleep_time}")
     sleep(opts.sleep_time)
     logger.info(f"## Awake {item}")
@@ -30,7 +32,6 @@ with Flow("PS Version") as flow:
 
 
 if __name__ == '__main__':
-
     parser = argparse.ArgumentParser(description='test pywinrm')
     parser.add_argument('--workers', type=int, default=10)
     parser.add_argument('--sleep_time', type=int, default=2)
@@ -38,9 +39,9 @@ if __name__ == '__main__':
 
     opts = parser.parse_args()
 
-    executor = LocalDaskExecutor(num_workers=opts.workers)
+    executor = LocalDaskExecutor() # num_workers=opts.workers)
+    #executor = CFExecutor()
     state = flow.run(executor=executor,
                      scripts="hello",
                      opts=opts)
-    for ii in state.result[results].result:
-        print(ii)
+    print(state)
