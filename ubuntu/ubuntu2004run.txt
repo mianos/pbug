@@ -1,0 +1,46 @@
+[2020-10-15 04:05:26] INFO - prefect.FlowRunner | Beginning Flow run for 'PS Version'
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'opts': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'opts': finished task run for task with final state: 'Success'
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'scripts': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'scripts': finished task run for task with final state: 'Success'
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'produce_range': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'produce_range': finished task run for task with final state: 'Success'
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task': finished task run for task with final state: 'Mapped'
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task[3]': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task[5]': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task[1]': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task[7]': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task[0]': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task[4]': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task[6]': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task[2]': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task[8]': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.TaskRunner | Task 'slow_task[9]': Starting task run...
+[2020-10-15 04:05:26] INFO - prefect.slow_task[9] | ==== IN TASK 9 Sleeping 3
+[2020-10-15 04:05:26] INFO - prefect.slow_task[2] | ==== IN TASK 2 Sleeping 3
+[2020-10-15 04:05:26] INFO - prefect.slow_task[8] | ==== IN TASK 8 Sleeping 3
+[2020-10-15 04:05:29] INFO - prefect.slow_task[9] | ## Awake 9
+[2020-10-15 04:05:29] INFO - prefect.slow_task[2] | ## Awake 2
+[2020-10-15 04:05:29] INFO - prefect.slow_task[8] | ## Awake 8
+[2020-10-15 04:05:29] INFO - prefect.TaskRunner | Task 'slow_task[9]': finished task run for task with final state: 'Success'
+[2020-10-15 04:05:56] INFO - prefect.TaskRunner | Task 'slow_task[0]': finished task run for task with final state: 'TimedOut'
+[2020-10-15 04:05:56] INFO - prefect.TaskRunner | Task 'slow_task[7]': finished task run for task with final state: 'TimedOut'
+[2020-10-15 04:05:56] INFO - prefect.TaskRunner | Task 'slow_task[3]': finished task run for task with final state: 'TimedOut'
+[2020-10-15 04:05:56] INFO - prefect.TaskRunner | Task 'slow_task[1]': finished task run for task with final state: 'TimedOut'
+[2020-10-15 04:05:56] INFO - prefect.TaskRunner | Task 'slow_task[2]': finished task run for task with final state: 'Success'
+[2020-10-15 04:05:56] INFO - prefect.TaskRunner | Task 'slow_task[4]': finished task run for task with final state: 'TimedOut'
+[2020-10-15 04:05:56] INFO - prefect.TaskRunner | Task 'slow_task[8]': finished task run for task with final state: 'Success'
+[2020-10-15 04:05:56] INFO - prefect.TaskRunner | Task 'slow_task[5]': finished task run for task with final state: 'TimedOut'
+[2020-10-15 04:05:56] INFO - prefect.TaskRunner | Task 'slow_task[6]': finished task run for task with final state: 'TimedOut'
+[2020-10-15 04:05:56] INFO - prefect.FlowRunner | Flow run FAILED: some reference tasks failed.
+Execution timed out.
+Execution timed out.
+2
+Execution timed out.
+Execution timed out.
+Execution timed out.
+Execution timed out.
+Execution timed out.
+8
+9
